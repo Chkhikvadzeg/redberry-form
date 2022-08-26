@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../assets/fonts/HelveticaNeue.ttc') format('ttc');  
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all .3s ease-out;
+}
+
+.button {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    width: 100%;
+    padding: 18px 60px;
+    text-decoration: none;
+    text-align: center;
+    background: #62A1EB;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    max-width: 500px;
+}
+
+.button:hover {
+    background: #317AD0;
+}
+
+.button:focus {
+    background: #1A5DAB;
+}
+
+html {
+    font-family: HelveticaNeue, sans-serif;
+}
+
+body {
+    font-size: .875rem;
+}
+
+.main {
+    padding: 65px 16px 35px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-photo-mobile {
+    max-width: 268px;
+}
+
+.main-photo-desktop {
+    display: none;
+    max-width: 780px;
+}
+
+.main_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+
+@media screen and (min-width: 768px) {
+    
+.button {
+    max-width: 387px;
+}
+
+.main {
+    padding: 80px 16px 150px;
+}
+
+.main-photo-mobile {
+    display: none;
+}
+
+.main-photo-desktop {
+    display: block;
+}
+
+.main_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+}

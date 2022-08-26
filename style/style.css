@@ -56,11 +56,13 @@ body {
 
 .main-photo-mobile {
     max-width: 268px;
+    width: 100%;
 }
 
 .main-photo-desktop {
     display: none;
     max-width: 780px;
+    width: 100%;
 }
 
 .main_buttons {

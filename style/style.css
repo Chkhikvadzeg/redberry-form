@@ -46,6 +46,7 @@ body {
 
 .main {
     padding: 65px 16px 35px;
+    gap: 2rem;
     height: 100vh;
     display: flex;
     flex-direction: column;

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redberry Form</title>
+    <link rel="shortcut icon" href="https://redberry.international/wp-content/uploads/2021/05/cropped-favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/global.css">
+    <link rel="stylesheet" href="../style/form.css">
+</head>
+<body>
+    <main class="main">
+        <div class="main__top">
+            <a class="arrow arrow-first" href="../index.html"><img src="../assets/arrow-left.svg" alt="arrow left"></a>
+            <button class="arrow arrow-second" ><img src="../assets/arrow-left.svg" alt="arrow left"></button>
+            <h3 class="main__heading">თანამშრომლის ინფო</h3>
+            <span class="page-number">1/2</span>
+        </div>
+        <form class="employee-info">
+            <div class="form-input">
+                <label for="firstName">სახელი</label>
+                <input type="text" name="firstName" id="firstName">
+                <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+            </div>
+            <div class="form-input">
+                <label for="lastName">გვარი</label>
+                <input type="text" name="lastName" id="lastName">
+                <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+            </div>
+            <select name="team" id="team">
+                <option value="team" disabled selected>თიმი</option>
+                <option value="development">დეველოპმენტი</option>
+                <option value="hr">HR</option>
+                <option value="sales">გაყიდვები</option>
+                <option value="design">დიზაინი</option>
+                <option value="marketing">მარკეტინგი</option>
+            </select>
+            <select name="position" id="position">
+                <option value="position" disabled selected>პოზიცია</option>
+                <option value="intern">ინტერნი</option>
+                <option value="hr-business-developer">HR ბიზნეს დეველოპერი</option>
+            </select>
+            <div class="form-input">
+                <label for="email">მეილი</label>
+                <input type="email" name="email" id="email">
+                <span class="form-input-warning">უნდა მთავრდებოდეს @redberry.ge-ით</span>
+            </div>
+            <div class="form-input">
+                <label for="number">ტელეფონის ნომერი</label>
+                <input type="tel" name="number" id="number">
+                <span class="form-input-warning">ქართული მობ-ნომრის ფორმატი</span>
+            </div>
+            <button class="button button--small" type="submit">შემდეგი</button>
+        </form>
+        <form class="laptop-info">
+            <div class="laptop-info-group">
+                <label for="input-image" class="label-image">
+                    <input class="input-image" type="file" name="laptop-image" accept="image/png, image/gif, image/jpeg"/ id="input-image">
+                    <span>ლეპტოპის ფოტოს ატვირთვა</span>
+                </label>
+                <div class="form-input" style="margin-top: 30px; margin-bottom: 10px;">
+                    <label for="laptopName">ლეპტოპის სახელი</label>
+                    <input type="text" name="laptopName" id="laptopName">
+                    <span class="form-input-warning">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
+                </div>
+                <select name="laptop-brand" id="laptop-brand">
+                    <option value="laptop-brand" disabled selected>ლეპტოპის ბრენდი</option>
+                    <option value="hp">HP</option>
+                    <option value="dell">Dell</option>
+                    <option value="microsoft">Microsoft</option>
+                    <option value="apple">Apple</option>
+                    <option value="lenovo">Lenovo</option>
+                    <option value="acer">Acer</option>
+                </select>
+            </div>
+            <div class="laptop-info-group">
+                <select name="cpu" id="cpu">
+                    <option value="cpu" disabled selected>CPU</option>
+                    <option value="intel core i3">Intel Core i3</option>
+                    <option value="intel core i5">Intel Core i5</option>
+                    <option value="intel core i7">Intel Core i7</option>
+                    <option value="intel core i9">Intel Core i9</option>
+                </select>
+                <div class="form-input" style="margin-top: 25px;">
+                    <label for="cpuCore">CPU-ს ბირთვი</label>
+                    <input type="number" name="cpuCore" id="cpuCore" placeholder="14">
+                    <span class="form-input-warning">მხოლოდ ციფრები</span>
+                </div>
+                <div class="form-input">
+                    <label for="cpuThread">CPU-ს ნაკადი</label>
+                    <input type="number" name="cpuThread" id="cpuThread" placeholder="365">
+                    <span class="form-input-warning">მხოლოდ ციფრები</span>
+                </div>
+                <div class="form-input">
+                    <label for="laptopRam">ლეპტოპის RAM (GB)</label>
+                    <input type="number" name="laptopRam" id="laptopRam" placeholder="16">
+                    <span class="form-input-warning">მხოლოდ ციფრები</span>
+                </div>
+                <div class="form-input">
+                    <label for="memoryType" style="margin-bottom: 25px;">მეხსიერების ტიპი</label>
+                    <div class="radio-buttons">
+                        <div class="radio-container">
+                            <input type="radio" name="memoryType" id="ssd">
+                            <label for="ssd">SSD</label>
+                        </div>
+                        <div class="radio-container">
+                            <input type="radio" name="memoryType" id="hdd">
+                            <label for="hdd">HDD</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="laptop-info-group">
+                <div class="form-input">
+                    <label for="date">შეძენის რიცხვი</label>
+                    <input type="date" name="date" id="date">
+                </div>
+                <div class="form-input">
+                    <label for="laptopPrice">ლეპტოპის ფასი</label>
+                    <input type="number" name="laptopPrice" id="laptopPrice" placeholder="0000">
+                    <span class="form-input-warning">მხოლოდ ციფრები</span>
+                </div>
+                <div class="form-input">
+                    <label for="memoryType" style="margin-bottom: 10px;">ლეპტოპის მდგომარეობა</label>
+                    <div class="radio-buttons">
+                        <div class="radio-container">
+                            <input type="radio" name="laptopCondition" id="new">
+                            <label for="new">ახალი</label>
+                        </div>
+                        <div class="radio-container">
+                            <input type="radio" name="laptopCondition" id="old">
+                            <label for="old">მეორადი</label>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="back">უკან</button>
+                        <button class="button button--small">დამახსოვრება</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

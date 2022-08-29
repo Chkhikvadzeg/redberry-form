@@ -1,0 +1,194 @@
+body {
+    background-color: #F6F6F6;
+    min-height: 100vh;
+    padding: 30px 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    max-width: 390px;
+    width: 100%;
+}
+
+.main__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+    padding: 0 20px;
+}
+
+.arrow {
+    position: absolute;
+    left: 20px;
+    top: 35px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.main__heading {
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.page-number {
+    font-size: 14px;
+    line-height: 17px;
+    color: #898989;
+}
+
+.employee-info {
+    display: none;
+    flex-direction: column;
+    gap: .5rem;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 30px 24px;
+    margin: 10px auto 0;
+}
+
+
+
+.form-input {
+    padding: .5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.form-input > label {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.form-input > input {
+    border: 1.8px solid #8AC0E2;
+    border-radius: 8px;
+    height: 60px;
+    padding: 0 16px;
+    outline: 0;
+    opacity: 1;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.form-input > input:invalid {
+    border-color: #E52F2F;
+}
+
+.form-input-warning {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color: #2E2E2E;
+}
+
+select {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 60px;
+    padding: 0 16px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #EBEBEB;
+    border-radius: 8px;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 8px);
+    background-position-y: 50%;
+    font-weight: 600;
+
+}
+
+option {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    background: white;
+}
+
+.button--small {
+    padding: 12px 45px;
+    width: fit-content;
+    margin-left: auto;
+}
+
+/* Laptop Info */
+
+.laptop-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 10px;
+}
+
+.laptop-info-group {
+    padding: 30px 20px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+}
+
+.label-image {
+    width: 100%;
+    height: 244px;
+    border-radius: 8px;
+    border: 2px dashed #4386A9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 75px;
+    position: relative;
+    background-image: url(../assets/camera.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.label-image > span {
+    color: #4386A9;
+    max-width: 150px;
+    text-align: center;
+}
+
+.input-image {
+    visibility: hidden;
+    width: 100%;display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.radio-buttons {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.buttons > .button {
+    padding: 12px 16px;
+}
+
+.back {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #62A1EB;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+}

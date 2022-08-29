@@ -24,36 +24,29 @@
             <div class="two-input-container">
                 <div class="form-input">
                     <label for="firstName">სახელი</label>
-                    <input type="text" name="firstName" id="firstName" placeholder="გრიშა">
+                    <input type="text" name="firstName" id="firstName" placeholder="გრიშა" required>
                     <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
                 </div>
                 <div class="form-input">
                     <label for="lastName">გვარი</label>
-                    <input type="text" name="lastName" id="lastName" placeholder="ბაგრატიონი">
+                    <input type="text" name="lastName" id="lastName" placeholder="ბაგრატიონი" required>
                     <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
                 </div>
             </div>
-            <select name="team" id="team">
+            <select name="team" id="team" required>
                 <option value="team" disabled selected>თიმი</option>
-                <option value="development">დეველოპმენტი</option>
-                <option value="hr">HR</option>
-                <option value="sales">გაყიდვები</option>
-                <option value="design">დიზაინი</option>
-                <option value="marketing">მარკეტინგი</option>
             </select>
-            <select name="position" id="position">
+            <select name="position" id="position" disabled required>
                 <option value="position" disabled selected>პოზიცია</option>
-                <option value="intern">ინტერნი</option>
-                <option value="hr-business-developer">HR ბიზნეს დეველოპერი</option>
             </select>
             <div class="form-input">
                 <label for="email">მეილი</label>
-                <input type="email" name="email" id="email" placeholder="grish666@redberry.ge">
+                <input type="email" name="email" id="email" placeholder="grish666@redberry.ge" required>
                 <span class="form-input-warning">უნდა მთავრდებოდეს @redberry.ge-ით</span>
             </div>
             <div class="form-input">
                 <label for="number">ტელეფონის ნომერი</label>
-                <input type="tel" name="number" id="number" placeholder="+995 598 00 07 01">
+                <input type="tel" name="number" id="number" placeholder="+995 598 00 07 01" required>
                 <span class="form-input-warning">ქართული მობ-ნომრის ფორმატი</span>
             </div>
             <button class="button button--small" type="submit">შემდეგი</button>
@@ -61,7 +54,7 @@
         <form class="laptop-info">
             <div class="laptop-info-group">
                 <label for="input-image" class="label-image">
-                    <input class="input-image" type="file" name="laptop-image" accept="image/png, image/gif, image/jpeg"/ id="input-image">
+                    <input class="input-image" type="file" name="laptop-image" accept="image/png, image/gif, image/jpeg"/ id="input-image" required>
                     <span class="upload-image-mobile">ლეპტოპის ფოტოს ატვირთვა</span>
                     <span class="upload-image-desktop">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</span>
                     <div class="button button--small">ატვირთე</div>
@@ -69,44 +62,34 @@
                 <div class="two-input-container">
                     <div class="form-input" style="margin-top: 30px; margin-bottom: 10px;">
                         <label for="laptopName">ლეპტოპის სახელი</label>
-                        <input type="text" name="laptopName" id="laptopName" placeholder="HP ">
+                        <input type="text" name="laptopName" id="laptopName" placeholder="HP " required>
                         <span class="form-input-warning">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
                     </div>
-                    <select name="laptop-brand" id="laptop-brand">
+                    <select name="laptop-brand" id="laptop-brand" required>
                         <option value="laptop-brand" disabled selected>ლეპტოპის ბრენდი</option>
-                        <option value="hp">HP</option>
-                        <option value="dell">Dell</option>
-                        <option value="microsoft">Microsoft</option>
-                        <option value="apple">Apple</option>
-                        <option value="lenovo">Lenovo</option>
-                        <option value="acer">Acer</option>
                     </select>
                 </div>
             </div>
             <div class="laptop-info-group">
                 <div class="two-input-container gap-24">
-                    <select name="cpu" id="cpu">
+                    <select name="cpu" id="cpu" required>
                         <option value="cpu" disabled selected>CPU</option>
-                        <option value="intel core i3">Intel Core i3</option>
-                        <option value="intel core i5">Intel Core i5</option>
-                        <option value="intel core i7">Intel Core i7</option>
-                        <option value="intel core i9">Intel Core i9</option>
                     </select>
                     <div class="form-input" style="margin-top: 25px;">
                         <label for="cpuCore">CPU-ს ბირთვი</label>
-                        <input type="number" name="cpuCore" id="cpuCore" placeholder="14">
+                        <input type="number" name="cpuCore" id="cpuCore" placeholder="14" required>
                         <span class="form-input-warning">მხოლოდ ციფრები</span>
                     </div>
                     <div class="form-input mt-20">
                         <label for="cpuThread">CPU-ს ნაკადი</label>
-                        <input type="number" name="cpuThread" id="cpuThread" placeholder="365">
+                        <input type="number" name="cpuThread" id="cpuThread" placeholder="365" required>
                         <span class="form-input-warning">მხოლოდ ციფრები</span>
                     </div>
                 </div>
                 <div class="two-input-container">
                     <div class="form-input">
                         <label for="laptopRam">ლეპტოპის RAM (GB)</label>
-                        <input type="number" name="laptopRam" id="laptopRam" placeholder="16">
+                        <input type="number" name="laptopRam" id="laptopRam" placeholder="16" required>
                         <span class="form-input-warning">მხოლოდ ციფრები</span>
                     </div>
                     <div class="form-input-radio">
@@ -133,7 +116,7 @@
                     <div class="form-input mt-20">
                         <label for="laptopPrice">ლეპტოპის ფასი</label>
                         
-                        <input type="number" name="laptopPrice" id="laptopPrice" placeholder="0000">
+                        <input type="number" name="laptopPrice" id="laptopPrice" placeholder="0000" required>
                         <span class="form-input-warning">მხოლოდ ციფრები</span>
                     </div>
                 </div>

@@ -37,6 +37,11 @@ body {
 .main__heading {
     line-height: 1.25;
     font-weight: 700;
+    display: none;
+}
+
+.main__heading.active {
+    display: block;
 }
 
 .page-number {
@@ -46,7 +51,7 @@ body {
 }
 
 .employee-info {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: .5rem;
     background: #FFFFFF;
@@ -62,6 +67,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    width: 100%;
 }
 
 .form-input > label {
@@ -111,12 +117,11 @@ select {
     appearance: none;
     background: #EBEBEB;
     border-radius: 8px;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-image: url("../assets/arrow-down.svg");
     background-repeat: no-repeat;
     background-position-x: calc(100% - 8px);
     background-position-y: 50%;
     font-weight: 600;
-
 }
 
 select.error {
@@ -166,6 +171,14 @@ option {
     background-color:  #F7F7F7;
     background-repeat: no-repeat;
     background-position: top 60px center;
+}
+
+.upload-image-desktop {
+    display: none;
+}
+
+.label-image > .button {
+    display: none;
 }
 
 .label-image.error {
@@ -256,3 +269,153 @@ option {
     font-size: 18px;
     line-height: 21px;
 }
+
+@media screen and (min-width: 1440px) {
+    body {
+        padding-top: 90px;
+    }
+
+    .main {
+        max-width: 1225px;
+    }
+
+    .main__top {
+        position: static;
+        margin: auto;
+        margin-bottom: 2rem;
+        max-width: 100%;
+    }
+    
+    .arrow {
+        left: 70px;
+        background: #D9D9D9;
+        border-radius: 50%;
+        width: 53px;
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-headings {
+        display: flex;
+        gap: 65px;
+        align-items: center;
+    }
+
+    .main__heading {
+        font-size: 20px;
+        line-height: 24px;
+        position: relative;
+        cursor: pointer;
+        display: block;
+    }
+
+    .main__heading.active::after {
+        content: "";
+        position: absolute;
+        width: 90%;
+        left: 5%;
+        height: 2px;
+        background-color: #000;
+        top: calc(100% + 15px);
+    }
+
+    .page-number {
+        display: none;
+    }
+
+    .employee-info {
+        gap: 40px;
+        border-radius: 18px;
+        padding: 88px 150px 44px; 
+        margin: 20px auto 0;
+    }
+
+    .two-input-container {
+        display: flex;
+        align-items: center;
+        gap: 66px;
+    }
+
+    .two-input-container > .form-input-radio {
+        margin: 0;
+    }
+
+    .two-input-container > select {
+        margin-top: 20px;
+    }
+
+    /* Laptop info */
+
+
+    .laptop-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 10px;
+    }
+
+    .laptop-info-group {
+        border-radius: 0;
+        padding: 88px 150px 44px; 
+        position: relative;
+    }
+
+    .laptop-info-group:not(:last-of-type)::after {
+        content: "";
+        position: absolute;
+        max-width: 925px;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        background-color: #D9D9D9;
+    }
+
+    .label-image {
+        height: 423px;
+        border-radius: 18px;
+        gap: 50px;
+        position: relative;
+        background-image: none;
+    }
+
+    .label-image > .button {
+        display: block;
+    }
+
+    .upload-image-mobile {
+        display: none;
+    }
+
+    .upload-image-desktop {
+        display: block;
+        position: absolute;
+        top: 105px;
+        font-size: 20px;
+        line-height: 38px;
+        max-width: 195px !important;
+    }
+
+    .label-image > .button--small {
+        margin: 0;
+        position: absolute;
+        bottom: 115px;
+    }
+
+    .label-image.error {
+        background-image: url(../assets/error.svg);
+        background-position: top 54px center;
+        background-size: 38px 34px;
+    }
+
+    .mt-20 {
+        margin-top: 20px;
+    }
+
+    .gap-24 {
+        gap: 24px;
+    }
+
+}
+    

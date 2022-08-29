@@ -14,19 +14,24 @@
         <div class="main__top">
             <a class="arrow arrow-first" href="../index.html"><img src="../assets/arrow-left.svg" alt="arrow left"></a>
             <button class="arrow arrow-second" ><img src="../assets/arrow-left.svg" alt="arrow left"></button>
-            <h3 class="main__heading">თანამშრომლის ინფო</h3>
+            <div class="main-headings">
+                <h3 class="main__heading active">თანამშრომლის ინფო</h3>
+                <h3 class="main__heading">ლეპტოპის მახასიათებლები</h3>
+            </div>
             <span class="page-number">1/2</span>
         </div>
         <form class="employee-info">
-            <div class="form-input">
-                <label for="firstName">სახელი</label>
-                <input type="text" name="firstName" id="firstName" placeholder="გრიშა">
-                <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
-            </div>
-            <div class="form-input">
-                <label for="lastName">გვარი</label>
-                <input type="text" name="lastName" id="lastName" placeholder="ბაგრატიონი">
-                <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+            <div class="two-input-container">
+                <div class="form-input">
+                    <label for="firstName">სახელი</label>
+                    <input type="text" name="firstName" id="firstName" placeholder="გრიშა">
+                    <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+                </div>
+                <div class="form-input">
+                    <label for="lastName">გვარი</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="ბაგრატიონი">
+                    <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+                </div>
             </div>
             <select name="team" id="team">
                 <option value="team" disabled selected>თიმი</option>
@@ -57,69 +62,80 @@
             <div class="laptop-info-group">
                 <label for="input-image" class="label-image">
                     <input class="input-image" type="file" name="laptop-image" accept="image/png, image/gif, image/jpeg"/ id="input-image">
-                    <span>ლეპტოპის ფოტოს ატვირთვა</span>
+                    <span class="upload-image-mobile">ლეპტოპის ფოტოს ატვირთვა</span>
+                    <span class="upload-image-desktop">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</span>
+                    <div class="button button--small">ატვირთე</div>
                 </label>
-                <div class="form-input" style="margin-top: 30px; margin-bottom: 10px;">
-                    <label for="laptopName">ლეპტოპის სახელი</label>
-                    <input type="text" name="laptopName" id="laptopName" placeholder="HP ">
-                    <span class="form-input-warning">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
+                <div class="two-input-container">
+                    <div class="form-input" style="margin-top: 30px; margin-bottom: 10px;">
+                        <label for="laptopName">ლეპტოპის სახელი</label>
+                        <input type="text" name="laptopName" id="laptopName" placeholder="HP ">
+                        <span class="form-input-warning">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
+                    </div>
+                    <select name="laptop-brand" id="laptop-brand">
+                        <option value="laptop-brand" disabled selected>ლეპტოპის ბრენდი</option>
+                        <option value="hp">HP</option>
+                        <option value="dell">Dell</option>
+                        <option value="microsoft">Microsoft</option>
+                        <option value="apple">Apple</option>
+                        <option value="lenovo">Lenovo</option>
+                        <option value="acer">Acer</option>
+                    </select>
                 </div>
-                <select name="laptop-brand" id="laptop-brand">
-                    <option value="laptop-brand" disabled selected>ლეპტოპის ბრენდი</option>
-                    <option value="hp">HP</option>
-                    <option value="dell">Dell</option>
-                    <option value="microsoft">Microsoft</option>
-                    <option value="apple">Apple</option>
-                    <option value="lenovo">Lenovo</option>
-                    <option value="acer">Acer</option>
-                </select>
             </div>
             <div class="laptop-info-group">
-                <select name="cpu" id="cpu">
-                    <option value="cpu" disabled selected>CPU</option>
-                    <option value="intel core i3">Intel Core i3</option>
-                    <option value="intel core i5">Intel Core i5</option>
-                    <option value="intel core i7">Intel Core i7</option>
-                    <option value="intel core i9">Intel Core i9</option>
-                </select>
-                <div class="form-input" style="margin-top: 25px;">
-                    <label for="cpuCore">CPU-ს ბირთვი</label>
-                    <input type="number" name="cpuCore" id="cpuCore" placeholder="14">
-                    <span class="form-input-warning">მხოლოდ ციფრები</span>
+                <div class="two-input-container gap-24">
+                    <select name="cpu" id="cpu">
+                        <option value="cpu" disabled selected>CPU</option>
+                        <option value="intel core i3">Intel Core i3</option>
+                        <option value="intel core i5">Intel Core i5</option>
+                        <option value="intel core i7">Intel Core i7</option>
+                        <option value="intel core i9">Intel Core i9</option>
+                    </select>
+                    <div class="form-input" style="margin-top: 25px;">
+                        <label for="cpuCore">CPU-ს ბირთვი</label>
+                        <input type="number" name="cpuCore" id="cpuCore" placeholder="14">
+                        <span class="form-input-warning">მხოლოდ ციფრები</span>
+                    </div>
+                    <div class="form-input mt-20">
+                        <label for="cpuThread">CPU-ს ნაკადი</label>
+                        <input type="number" name="cpuThread" id="cpuThread" placeholder="365">
+                        <span class="form-input-warning">მხოლოდ ციფრები</span>
+                    </div>
                 </div>
-                <div class="form-input">
-                    <label for="cpuThread">CPU-ს ნაკადი</label>
-                    <input type="number" name="cpuThread" id="cpuThread" placeholder="365">
-                    <span class="form-input-warning">მხოლოდ ციფრები</span>
-                </div>
-                <div class="form-input">
-                    <label for="laptopRam">ლეპტოპის RAM (GB)</label>
-                    <input type="number" name="laptopRam" id="laptopRam" placeholder="16">
-                    <span class="form-input-warning">მხოლოდ ციფრები</span>
-                </div>
-                <div class="form-input-radio">
-                    <label for="memoryType">მეხსიერების ტიპი</label>
-                    <div class="radio-buttons">
-                        <div class="radio-container">
-                            <input type="radio" name="memoryType" id="ssd">
-                            <label for="ssd">SSD</label>
-                        </div>
-                        <div class="radio-container">
-                            <input type="radio" name="memoryType" id="hdd">
-                            <label for="hdd">HDD</label>
+                <div class="two-input-container">
+                    <div class="form-input">
+                        <label for="laptopRam">ლეპტოპის RAM (GB)</label>
+                        <input type="number" name="laptopRam" id="laptopRam" placeholder="16">
+                        <span class="form-input-warning">მხოლოდ ციფრები</span>
+                    </div>
+                    <div class="form-input-radio">
+                        <label for="memoryType">მეხსიერების ტიპი</label>
+                        <div class="radio-buttons">
+                            <div class="radio-container">
+                                <input type="radio" name="memoryType" id="ssd">
+                                <label for="ssd">SSD</label>
+                            </div>
+                            <div class="radio-container">
+                                <input type="radio" name="memoryType" id="hdd">
+                                <label for="hdd">HDD</label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="laptop-info-group">
-                <div class="form-input">
-                    <label for="date">შეძენის რიცხვი</label>
-                    <input type="date" name="date" id="date">
-                </div>
-                <div class="form-input">
-                    <label for="laptopPrice">ლეპტოპის ფასი</label>
-                    <input type="number" name="laptopPrice" id="laptopPrice" placeholder="0000">
-                    <span class="form-input-warning">მხოლოდ ციფრები</span>
+                <div class="two-input-container">
+                    <div class="form-input">
+                        <label for="date">შეძენის რიცხვი (არჩევითი)</label>
+                        <input id="date" type="text" placeholder="დდ / თთ / წწწწ"">
+                    </div>
+                    <div class="form-input mt-20">
+                        <label for="laptopPrice">ლეპტოპის ფასი</label>
+                        
+                        <input type="number" name="laptopPrice" id="laptopPrice" placeholder="0000">
+                        <span class="form-input-warning">მხოლოდ ციფრები</span>
+                    </div>
                 </div>
                 <div class="form-input-radio">
                     <label for="memoryType">ლეპტოპის მდგომარეობა</label>
@@ -141,5 +157,6 @@
             </div>
         </form>
     </main>
+    <script src="../script/main.js"></script>
 </body>
 </html>

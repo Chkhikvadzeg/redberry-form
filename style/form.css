@@ -14,18 +14,20 @@ body {
 }
 
 .main__top {
+    max-width: 390px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: .25rem;
     padding: 0 20px;
+    position: relative;
 }
 
 .arrow {
     position: absolute;
     left: 20px;
-    top: 35px;
     background: transparent;
     border: none;
     outline: none;
@@ -44,7 +46,7 @@ body {
 }
 
 .employee-info {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: .5rem;
     background: #FFFFFF;
@@ -75,11 +77,11 @@ body {
     padding: 0 16px;
     outline: 0;
     opacity: 1;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 1);
 }
 
-.form-input > input:invalid {
-    border-color: #E52F2F;
+input::placeholder {
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .form-input-warning {
@@ -87,6 +89,15 @@ body {
     font-size: 14px;
     line-height: 21px;
     color: #2E2E2E;
+}
+
+.form-input.error label,
+.form-input.error span {
+    color: #E52F2F;
+}
+
+.form-input.error input {
+    border-color: #E52F2F;
 }
 
 select {
@@ -106,6 +117,10 @@ select {
     background-position-y: 50%;
     font-weight: 600;
 
+}
+
+select.error {
+    border: 1.8px solid #E52F2F;
 }
 
 option {
@@ -145,17 +160,29 @@ option {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 75px;
+    gap: 50px;
     position: relative;
     background-image: url(../assets/camera.svg);
+    background-color:  #F7F7F7;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top 60px center;
+}
+
+.label-image.error {
+    border-color: #E52F2F;
+    background-color: #FFEDED;
+    background-image: url(../assets/camera.svg), url(../assets/error.svg);
+    background-position: top 60px center, bottom 25px center;
 }
 
 .label-image > span {
     color: #4386A9;
     max-width: 150px;
     text-align: center;
+}
+
+.label-image.error > span {
+    color: #E52F2F;
 }
 
 .input-image {
@@ -165,10 +192,47 @@ option {
     align-items: center;
 }
 
+.form-input-radio {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.form-input-radio >label {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.form-input-radio.error > label {
+    color: #E52F2F;
+    position: relative;
+    max-width: fit-content;
+}
+
+#laptopPrice {
+    background-image: url(../assets/lari.svg);
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+}
+
+.form-input-radio.error > label::after {
+    position: absolute;
+    right: -2rem;
+    content: url(../assets/error.svg);
+}
+
 .radio-buttons {
     display: flex;
     gap: 60px;
     align-items: center;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .buttons {

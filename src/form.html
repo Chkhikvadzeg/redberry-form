@@ -20,12 +20,12 @@
         <form class="employee-info">
             <div class="form-input">
                 <label for="firstName">სახელი</label>
-                <input type="text" name="firstName" id="firstName">
+                <input type="text" name="firstName" id="firstName" placeholder="გრიშა">
                 <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
             </div>
             <div class="form-input">
                 <label for="lastName">გვარი</label>
-                <input type="text" name="lastName" id="lastName">
+                <input type="text" name="lastName" id="lastName" placeholder="ბაგრატიონი">
                 <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
             </div>
             <select name="team" id="team">
@@ -43,12 +43,12 @@
             </select>
             <div class="form-input">
                 <label for="email">მეილი</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" placeholder="grish666@redberry.ge">
                 <span class="form-input-warning">უნდა მთავრდებოდეს @redberry.ge-ით</span>
             </div>
             <div class="form-input">
                 <label for="number">ტელეფონის ნომერი</label>
-                <input type="tel" name="number" id="number">
+                <input type="tel" name="number" id="number" placeholder="+995 598 00 07 01">
                 <span class="form-input-warning">ქართული მობ-ნომრის ფორმატი</span>
             </div>
             <button class="button button--small" type="submit">შემდეგი</button>
@@ -61,7 +61,7 @@
                 </label>
                 <div class="form-input" style="margin-top: 30px; margin-bottom: 10px;">
                     <label for="laptopName">ლეპტოპის სახელი</label>
-                    <input type="text" name="laptopName" id="laptopName">
+                    <input type="text" name="laptopName" id="laptopName" placeholder="HP ">
                     <span class="form-input-warning">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
                 </div>
                 <select name="laptop-brand" id="laptop-brand">
@@ -97,8 +97,8 @@
                     <input type="number" name="laptopRam" id="laptopRam" placeholder="16">
                     <span class="form-input-warning">მხოლოდ ციფრები</span>
                 </div>
-                <div class="form-input">
-                    <label for="memoryType" style="margin-bottom: 25px;">მეხსიერების ტიპი</label>
+                <div class="form-input-radio">
+                    <label for="memoryType">მეხსიერების ტიპი</label>
                     <div class="radio-buttons">
                         <div class="radio-container">
                             <input type="radio" name="memoryType" id="ssd">
@@ -121,8 +121,8 @@
                     <input type="number" name="laptopPrice" id="laptopPrice" placeholder="0000">
                     <span class="form-input-warning">მხოლოდ ციფრები</span>
                 </div>
-                <div class="form-input">
-                    <label for="memoryType" style="margin-bottom: 10px;">ლეპტოპის მდგომარეობა</label>
+                <div class="form-input-radio">
+                    <label for="memoryType">ლეპტოპის მდგომარეობა</label>
                     <div class="radio-buttons">
                         <div class="radio-container">
                             <input type="radio" name="laptopCondition" id="new">
@@ -133,10 +133,10 @@
                             <label for="old">მეორადი</label>
                         </div>
                     </div>
-                    <div class="buttons">
-                        <button class="back">უკან</button>
-                        <button class="button button--small">დამახსოვრება</button>
-                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="back">უკან</button>
+                    <button class="button button--small">დამახსოვრება</button>
                 </div>
             </div>
         </form>

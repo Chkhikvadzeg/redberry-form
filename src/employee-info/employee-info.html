@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redberry Form</title>
+    <link rel="shortcut icon" href="https://redberry.international/wp-content/uploads/2021/05/cropped-favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../style/global.css">
+    <link rel="stylesheet" href="../../style/form.css">
+</head>
+<body>
+    <main class="main">
+        <div class="main__top">
+            <a class="arrow arrow-first" href="../../index.html""><img src="../../assets/arrow-left.svg" alt="arrow left"></a>
+            <div class="main-headings">
+                <h3 class="main__heading active">თანამშრომლის ინფო</h3>
+                <a href="../laptop-info/laptop-info.html" class="main__heading">ლეპტოპის მახასიათებლები</a>
+            </div>
+            <span class="page-number">1/2</span>
+        </div>
+        <form class="employee-info">
+            <div class="two-input-container">
+                <div class="form-input">
+                    <label for="firstName">სახელი</label>
+                    <input type="text" name="firstName" id="firstName" placeholder="გრიშა" required>
+                    <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+                </div>
+                <div class="form-input">
+                    <label for="lastName">გვარი</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="ბაგრატიონი" required>
+                    <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+                </div>
+            </div>
+            <select name="team" id="team" required>
+                <option value="team" disabled selected>თიმი</option>
+            </select>
+            <select name="position" id="position" disabled required>
+                <option value="position" disabled selected>პოზიცია</option>
+            </select>
+            <div class="form-input">
+                <label for="email">მეილი</label>
+                <input type="email" name="email" id="email" placeholder="grish666@redberry.ge" required>
+                <span class="form-input-warning">უნდა მთავრდებოდეს @redberry.ge-ით</span>
+            </div>
+            <div class="form-input">
+                <label for="number">ტელეფონის ნომერი</label>
+                <input type="tel" name="number" id="number" placeholder="+995 598 00 07 01" required>
+                <span class="form-input-warning">ქართული მობ-ნომრის ფორმატი</span>
+            </div>
+            <a href="../laptop-info/laptop-info.html" class="button button--small" type="submit">შემდეგი</a>
+        </form>
+    </main>
+    <script src="./employee-info.js"></script>
+</body>
+</html>

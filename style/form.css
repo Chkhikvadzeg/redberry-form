@@ -38,6 +38,8 @@ body {
     line-height: 1.25;
     font-weight: 700;
     display: none;
+    text-decoration: none;
+    color: #000;
 }
 
 .main__heading.active {
@@ -362,7 +364,6 @@ option {
 
 
     .laptop-info {
-        display: flex;
         flex-direction: column;
         gap: 0;
         margin-top: 10px;

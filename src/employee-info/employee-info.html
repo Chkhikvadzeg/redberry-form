@@ -22,21 +22,21 @@
         <form class="employee-info">
             <div class="two-input-container">
                 <div class="form-input">
-                    <label for="firstName">სახელი</label>
-                    <input type="text" name="firstName" id="firstName" placeholder="გრიშა" required>
+                    <label for="name">სახელი</label>
+                    <input type="text" name="name" id="name" placeholder="გრიშა" required>
                     <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
                 </div>
                 <div class="form-input">
-                    <label for="lastName">გვარი</label>
-                    <input type="text" name="lastName" id="lastName" placeholder="ბაგრატიონი" required>
+                    <label for="surname">გვარი</label>
+                    <input type="text" name="surname" id="surname" placeholder="ბაგრატიონი" required>
                     <span class="form-input-warning">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
                 </div>
             </div>
-            <select name="team" id="team" required>
-                <option value="team" disabled selected>თიმი</option>
+            <select name="team_id" id="team_id" required>
+                <option value="team" disabled selected hidden>თიმი</option>
             </select>
-            <select name="position" id="position" disabled required>
-                <option value="position" disabled selected>პოზიცია</option>
+            <select name="position_id" id="position_id" disabled required>
+                <option value="position" disabled selected hidden>პოზიცია</option>
             </select>
             <div class="form-input">
                 <label for="email">მეილი</label>
@@ -44,8 +44,8 @@
                 <span class="form-input-warning">უნდა მთავრდებოდეს @redberry.ge-ით</span>
             </div>
             <div class="form-input">
-                <label for="number">ტელეფონის ნომერი</label>
-                <input type="tel" name="number" id="number" placeholder="+995 598 00 07 01" required>
+                <label for="phone_number">ტელეფონის ნომერი</label>
+                <input type="tel" name="phone_number" id="phone_number" placeholder="+995 598 00 07 01" required>
                 <span class="form-input-warning">ქართული მობ-ნომრის ფორმატი</span>
             </div>
             <a href="../laptop-info/laptop-info.html" class="button button--small" type="submit">შემდეგი</a>

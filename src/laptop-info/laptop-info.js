@@ -1,3 +1,6 @@
+const data = JSON.parse(localStorage.getItem('data'));
+console.log(data);
+
 fetch('https://pcfy.redberryinternship.ge/api/brands')
 .then(response => response.json()).then(data => {
     let brands = data.data;

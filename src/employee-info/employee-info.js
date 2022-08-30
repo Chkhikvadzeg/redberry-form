@@ -7,7 +7,7 @@ const number = document.querySelector('#phone_number');
 
 const data = {};
 
-const localData = JSON.parse(localStorage.getItem('data'));
+const localData = JSON.parse(localStorage.getItem('data')) || {};
 
 if(localData.name){
     firstName.value = localData.name;

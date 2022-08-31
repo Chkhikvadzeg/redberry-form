@@ -7,6 +7,8 @@ const number = document.querySelector('#phone_number');
 
 const data = {};
 
+let submitted = false;
+
 const localData = JSON.parse(localStorage.getItem('data')) || {};
 
 if(localData.name){
@@ -64,20 +66,11 @@ let form = document.querySelector('.employee-info');
 const firstFormButton = form.querySelector('.button--small');
 
 firstFormButton.addEventListener('click', (event) => {
-    testGeorgian(firstName, data);
-    testGeorgian(lastName, data);
-    testSelect(team, data);
-    testSelect(position, data);
-    testMail(mail, data);
-    testPhone(number, data);
+    testForm(event);
+})
 
-    const jsonData = JSON.stringify(data)
-
-    if(Object.keys(data).length < 6) {
-        event.preventDefault();
-    }else {
-        localStorage.setItem('data', jsonData);
-    }
+document.querySelector('a.main__heading').addEventListener('click', (event) => {
+    testForm(event)
 })
 
 const testGeorgian = ( input, object ) => {
@@ -158,3 +151,37 @@ const filterPositions = () => {
     }
 )
 }
+
+const testForm = (event) => {
+    testGeorgian(firstName, data);
+    testGeorgian(lastName, data);
+    testSelect(team, data);
+    testSelect(position, data);
+    testMail(mail, data);
+    testPhone(number, data);
+
+    const jsonData = JSON.stringify(data)
+
+    if(Object.keys(data).length < 6) {
+        event.preventDefault();
+    }else {
+        localStorage.setItem('data', jsonData);
+    }
+    submitted = true;
+}
+
+document.querySelectorAll('input').forEach(input => input.addEventListener('input', (event) => {
+    if(submitted){
+        testForm();
+    }
+    localData[input.id] = input.value;
+    localStorage.setItem('data', JSON.stringify(localData));
+}))
+
+document.querySelectorAll('select').forEach(select => select.addEventListener('input', (event) => {
+    if(submitted){
+        testForm();
+    }
+    localData[select.id] = select.value;
+    localStorage.setItem('data', JSON.stringify(localData));
+}))

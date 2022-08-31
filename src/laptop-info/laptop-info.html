@@ -19,56 +19,56 @@
             </div>
             <span class="page-number">2/2</span>
         </div>
-        <form class="laptop-info">
+        <form class="laptop-info" name="laptopInfo" onsubmit="consoleLog(event)">
             <div class="laptop-info-group">
-                <label for="input-image" class="label-image">
-                    <input class="input-image" type="file" name="laptop-image" accept="image/png, image/gif, image/jpeg"/ id="input-image" required>
+                <label for="laptop_image" class="label-image">
+                    <input class="input-image" type="file" name="laptop-image" accept="image/png, image/gif, image/jpeg"/ id="laptop_image" required>
                     <span class="upload-image-mobile">ლეპტოპის ფოტოს ატვირთვა</span>
                     <span class="upload-image-desktop">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</span>
                     <div class="button button--small">ატვირთე</div>
                 </label>
                 <div class="two-input-container">
                     <div class="form-input" style="margin-top: 30px; margin-bottom: 10px;">
-                        <label for="laptopName">ლეპტოპის სახელი</label>
-                        <input type="text" name="laptopName" id="laptopName" placeholder="HP " required>
+                        <label for="laptop_name">ლეპტოპის სახელი</label>
+                        <input type="text" name="laptop_name" id="laptop_name" placeholder="HP " required>
                         <span class="form-input-warning">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
                     </div>
-                    <select name="laptop-brand" id="laptop-brand" required>
+                    <select name="laptop_brand_id" id="laptop_brand_id" required>
                         <option value="laptop-brand" disabled selected>ლეპტოპის ბრენდი</option>
                     </select>
                 </div>
             </div>
             <div class="laptop-info-group">
                 <div class="two-input-container gap-24">
-                    <select name="cpu" id="cpu" required>
+                    <select name="laptop_cpu" id="laptop_cpu" required>
                         <option value="cpu" disabled selected>CPU</option>
                     </select>
                     <div class="form-input" style="margin-top: 25px;">
-                        <label for="cpuCore">CPU-ს ბირთვი</label>
-                        <input type="number" name="cpuCore" id="cpuCore" placeholder="14" required>
+                        <label for="laptop_cpu_cores">CPU-ს ბირთვი</label>
+                        <input type="number" name="laptop_cpu_cores" id="laptop_cpu_cores" placeholder="14" required>
                         <span class="form-input-warning">მხოლოდ ციფრები</span>
                     </div>
                     <div class="form-input mt-20">
-                        <label for="cpuThread">CPU-ს ნაკადი</label>
-                        <input type="number" name="cpuThread" id="cpuThread" placeholder="365" required>
+                        <label for="laptop_cpu_threads">CPU-ს ნაკადი</label>
+                        <input type="number" name="laptop_cpu_threads" id="laptop_cpu_threads" placeholder="365" required>
                         <span class="form-input-warning">მხოლოდ ციფრები</span>
                     </div>
                 </div>
                 <div class="two-input-container">
                     <div class="form-input">
-                        <label for="laptopRam">ლეპტოპის RAM (GB)</label>
-                        <input type="number" name="laptopRam" id="laptopRam" placeholder="16" required>
+                        <label for="laptop_ram">ლეპტოპის RAM (GB)</label>
+                        <input type="number" name="laptop_ram" id="laptop_ram" placeholder="16" required>
                         <span class="form-input-warning">მხოლოდ ციფრები</span>
                     </div>
                     <div class="form-input-radio">
-                        <label for="memoryType">მეხსიერების ტიპი</label>
-                        <div class="radio-buttons">
+                        <label for="laptop_hard_drive_type">მეხსიერების ტიპი</label>
+                        <div class="radio-buttons laptop_hard_drive_type">
                             <div class="radio-container">
-                                <input type="radio" name="memoryType" id="ssd">
+                                <input type="radio" name="laptop_hard_drive_type" id="ssd" value="SSD">
                                 <label for="ssd">SSD</label>
                             </div>
                             <div class="radio-container">
-                                <input type="radio" name="memoryType" id="hdd">
+                                <input type="radio" name="laptop_hard_drive_type" id="hdd" value="HDD">
                                 <label for="hdd">HDD</label>
                             </div>
                         </div>
@@ -78,32 +78,31 @@
             <div class="laptop-info-group">
                 <div class="two-input-container">
                     <div class="form-input">
-                        <label for="date">შეძენის რიცხვი (არჩევითი)</label>
-                        <input id="date" type="text" placeholder="დდ / თთ / წწწწ"">
+                        <label for="laptop_purchase_date">შეძენის რიცხვი (არჩევითი)</label>
+                        <input id="laptop_purchase_date" type="text" placeholder="დდ / თთ / წწწწ"">
                     </div>
                     <div class="form-input mt-20">
-                        <label for="laptopPrice">ლეპტოპის ფასი</label>
-                        
-                        <input type="number" name="laptopPrice" id="laptopPrice" placeholder="0000" required>
+                        <label for="laptop_price">ლეპტოპის ფასი</label>
+                        <input type="number" name="laptop_price" id="laptop_price" placeholder="0000" required>
                         <span class="form-input-warning">მხოლოდ ციფრები</span>
                     </div>
                 </div>
                 <div class="form-input-radio">
-                    <label for="memoryType">ლეპტოპის მდგომარეობა</label>
-                    <div class="radio-buttons">
+                    <label for="laptop_state">ლეპტოპის მდგომარეობა</label>
+                    <div class="radio-buttons laptop_state">
                         <div class="radio-container">
-                            <input type="radio" name="laptopCondition" id="new">
+                            <input type="radio" name="laptop_state" id="new" value="new">
                             <label for="new">ახალი</label>
                         </div>
                         <div class="radio-container">
-                            <input type="radio" name="laptopCondition" id="old">
+                            <input type="radio" name="laptop_state" id="old" value="used">
                             <label for="old">მეორადი</label>
                         </div>
                     </div>
                 </div>
                 <div class="buttons">
-                    <button class="back">უკან</button>
-                    <button class="button button--small">დამახსოვრება</button>
+                    <a href="../employee-info/employee-info.html" class="back">უკან</a>
+                    <button class="button button--small" type="submit">დამახსოვრება</button>
                 </div>
             </div>
         </form>

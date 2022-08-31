@@ -56,6 +56,22 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.link {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #62A1EB;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-decoration: none;
+}
+
+a {
+    display: block;
+}
+
 @media screen and (min-width: 768px) {
     
     .button {

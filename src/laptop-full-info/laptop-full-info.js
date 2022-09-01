@@ -20,13 +20,10 @@ const memoryType = document.querySelector('#memoryType');
 fetch(`https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=0fd6fd8a505704d77b82ddb480f22750`).then(response => response.json()).then(data => {
     const laptop = data.data.laptop;
     const user = data.data.user;
-    console.log(laptop, user);
-
 
     fetch('https://pcfy.redberryinternship.ge/api/teams')
     .then(response => response.json()).then(data => {
         let teams = data.data;
-        console.log(teams);
         for(let i = 0; i < teams.length; i++) {
             if(teams[i].id === user.team_id) {
                 team.innerText = teams[i].name;
@@ -39,7 +36,6 @@ fetch(`https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=0fd6fd8a5
     fetch('https://pcfy.redberryinternship.ge/api/positions')
     .then(response => response.json()).then(data => {
         let positions = data.data;
-        console.log(positions);
         for(let i = 0; i < positions.length; i++) {
             if(positions[i].id === user.position_id) {
                 position.innerText = positions[i].name;
@@ -52,7 +48,6 @@ fetch(`https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=0fd6fd8a5
     fetch('https://pcfy.redberryinternship.ge/api/brands')
     .then(response => response.json()).then(data => {
         let brands = data.data;
-        console.log(brands);
         for(let i = 0; i < brands.length; i++) {
             if(brands[i].id === laptop.brand_id) {
                 laptopBrand.innerText = brands[i].name;

@@ -143,7 +143,8 @@ submitButton.addEventListener('click', (event) => {
             body: formData
         })
         localStorage.removeItem('data');
-        window.location.href = '../popup/success.html';
+        event.preventDefault();
+        // window.location.href = '../popup/success.html';
     }
 
 })
@@ -255,3 +256,14 @@ document.querySelectorAll('input[type="radio"]').forEach(radio => radio.addEvent
     localStorage.setItem('data', JSON.stringify(localData));
 }))
 
+
+const laptopPhotoSRC = '';
+laptopPhoto.addEventListener('change', (event) => {
+    laptopPhoto.parentElement.classList.remove('error');
+    const reader = new FileReader();
+    reader.addEventListener('load', () => {
+        laptopPhotoSRC = reader.result;
+        laptopPhoto.parentElement.style.backgroundImage = `url(${laptopPhotoSRC})`;
+        console.log(laptopPhotoSRC);
+    })
+})

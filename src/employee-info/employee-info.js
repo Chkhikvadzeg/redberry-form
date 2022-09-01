@@ -5,8 +5,6 @@ const position = document.querySelector('#position_id');
 const mail = document.querySelector('#email');
 const number = document.querySelector('#phone_number');
 
-const data = {};
-
 let submitted = false;
 
 const localData = JSON.parse(localStorage.getItem('data')) || {};
@@ -67,6 +65,7 @@ const firstFormButton = form.querySelector('.button--small');
 
 firstFormButton.addEventListener('click', (event) => {
     testForm(event);
+    event.preventDefault();
 })
 
 document.querySelector('a.main__heading').addEventListener('click', (event) => {
@@ -119,7 +118,7 @@ const testPhone = ( input, object ) => {
     }
     if(phoneRegex.test(phone)) {
         if(input.value.startsWith('+995')){
-            object[input.id] = input.value;
+            object[input.id] = phone;
         }else {
             object[input.id] = '+995' + phone;
         }

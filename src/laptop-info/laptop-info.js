@@ -1,4 +1,4 @@
-const localData = JSON.parse(localStorage.getItem('data')) || {};
+const localData = JSON.parse(localStorage.getItem('data'));
 
 let laptopPhoto = document.querySelector('#laptop_image');
 let laptopName = document.querySelector('#laptop_name');

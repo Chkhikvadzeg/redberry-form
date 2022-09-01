@@ -64,12 +64,23 @@ let form = document.querySelector('.employee-info');
 const firstFormButton = form.querySelector('.button--small');
 
 firstFormButton.addEventListener('click', (event) => {
-    testForm(event);
-    event.preventDefault();
+    testForm();
+    const jsonData = JSON.stringify(localData)
+    if(document.querySelectorAll('.error').length === 0){
+        localStorage.setItem('data', jsonData);
+    }else {
+        event.preventDefault();
+    }
 })
 
 document.querySelector('a.main__heading').addEventListener('click', (event) => {
-    testForm(event)
+    testForm()
+    const jsonData = JSON.stringify(localData)
+    if(document.querySelectorAll('.error').length === 0){
+        localStorage.setItem('data', jsonData);
+    }else {
+        event.preventDefault();
+    }
 })
 
 const testGeorgian = ( input, object ) => {
@@ -109,7 +120,7 @@ const testMail = ( input, object ) => {
 }
 
 const testPhone = ( input, object ) => {
-    const phone = input.value.replace(/\s/g, '');
+    const phone = input.value.split(' ').join('');
     let phoneRegex;
     if(input.value.startsWith('+995')){
         phoneRegex = /^[\+995][0-9]{12}$/im;
@@ -151,21 +162,13 @@ const filterPositions = () => {
 )
 }
 
-const testForm = (event) => {
-    testGeorgian(firstName, data);
-    testGeorgian(lastName, data);
-    testSelect(team, data);
-    testSelect(position, data);
-    testMail(mail, data);
-    testPhone(number, data);
-
-    const jsonData = JSON.stringify(data)
-
-    if(Object.keys(data).length < 6) {
-        event.preventDefault();
-    }else {
-        localStorage.setItem('data', jsonData);
-    }
+const testForm = () => {
+    testGeorgian(firstName, localData);
+    testGeorgian(lastName, localData);
+    testSelect(team, localData);
+    testSelect(position, localData);
+    testMail(mail, localData);
+    testPhone(number, localData);
     submitted = true;
 }
 

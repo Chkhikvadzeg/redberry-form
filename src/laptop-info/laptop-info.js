@@ -110,32 +110,32 @@ if(event.target.value === '') {
 const submitButton = document.querySelectorAll('.laptop-info .button--small')[1];
 
 submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
     testForm();
 
     submitted = true;
     const errorClasses = document.querySelectorAll('.error');
 
-    if(errorClasses.length > 0) {
-        event.preventDefault();
-    }else {
-        event.preventDefault();
+    if(errorClasses.length === 0) {
         const formData = new FormData();
         formData.append('name', localData.name);
         formData.append('surname', localData.surname);
         formData.append('email', localData.email);
         formData.append('phone_number', localData.phone_number);
-        formData.append('team_id', localData.team_id);
-        formData.append('position_id', localData.position_id);
+        formData.append('team_id', +localData.team_id);
+        formData.append('position_id', +localData.position_id);
         formData.append('laptop_name', localData.laptop_name);
-        formData.append('laptop_brand_id', localData.laptop_brand_id);
+        formData.append('laptop_brand_id', +localData.laptop_brand_id);
         formData.append('laptop_cpu', localData.laptop_cpu);
-        formData.append('laptop_cpu_cores', localData.laptop_cpu_cores);
-        formData.append('laptop_cpu_threads', localData.laptop_cpu_threads);
-        formData.append('laptop_ram', localData.laptop_ram);
-        formData.append('laptop_price', localData.laptop_price);
+        formData.append('laptop_cpu_cores', +localData.laptop_cpu_cores);
+        formData.append('laptop_cpu_threads', +localData.laptop_cpu_threads);
+        formData.append('laptop_ram', +localData.laptop_ram);
+        formData.append('laptop_price', +localData.laptop_price);
         formData.append('laptop_hard_drive_type', localData.laptop_hard_drive_type);
-        formData.append('laptop_state', 'new');
-        formData.append('laptop_purchase_date', localData.laptop_purchase_date || "");
+        formData.append('laptop_state', localData.laptop_state);
+        if(localData.laptop_purchase_date) {
+            formData.append('laptop_purchase_date', localData.laptop_purchase_date);
+        }
         formData.append('laptop_image', localData.laptop_image);
         formData.append('token', '0fd6fd8a505704d77b82ddb480f22750');
         fetch('https://pcfy.redberryinternship.ge/api/laptop/create', {
@@ -206,8 +206,8 @@ const testRadio = (parentElementName, object) => {
 }
 
 const testPhoto = (input, object) => {
-    if(input.files.length > 0) {
-        object[input.id] = input.files[0];
+    if(object.laptop_image) {
+        object[laptop_image] = input.files[0];
         input.parentElement.classList.remove('error');
         input.parentElement.classList.add('succeed');
     }else {
@@ -283,6 +283,7 @@ laptopPhoto.parentElement.addEventListener('dragover', (event) => {
     laptopPhoto.parentElement.classList.remove('error');
     laptopPhoto.parentElement.classList.remove('dragover');
     laptopPhoto.parentElement.style.backgroundImage = `url(${URL.createObjectURL(event.dataTransfer.files[0])})`;
+    localData.laptop_image = event.dataTransfer.files[0];
     laptopPhoto.parentElement.classList.add('succeed');
     laptopPhoto.parentElement.querySelectorAll('span').forEach(span => span.style.display = 'none');
  });

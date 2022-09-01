@@ -5,9 +5,14 @@ const position = document.querySelector('#position_id');
 const mail = document.querySelector('#email');
 const number = document.querySelector('#phone_number');
 
+
+let teamOptions = [];
+let positionOptions = [];
+
 let submitted = false;
 
 const localData = JSON.parse(localStorage.getItem('data')) || {};
+
 
 if(localData.name){
     firstName.value = localData.name;
@@ -28,6 +33,7 @@ if(localData.phone_number){
 fetch('https://pcfy.redberryinternship.ge/api/teams')
     .then(response => response.json()).then(data => {
         let teams = data.data;
+        teamOptions = [...teams];
         for(let i = 0; i < teams.length; i++) {
             let option = document.createElement('option');
             option.value = teams[i].id;
@@ -44,10 +50,16 @@ fetch('https://pcfy.redberryinternship.ge/api/teams')
     }
 )
 
-team.addEventListener('input', () => {
+fetch('https://pcfy.redberryinternship.ge/api/positions') 
+.then(response => response.json()).then(data => {
+    let positions = data.data;
+    positionOptions = [...positions];
     filterPositions();
 })
 
+team.addEventListener('input', () => {
+    filterPositions();
+})
 
 document.querySelectorAll('input').forEach(input => input.addEventListener('input', (event) => {
     localData[input.id] = input.value;
@@ -146,20 +158,18 @@ const filterPositions = () => {
     position.innerHTML = '<option value="position" disabled selected hidden>პოზიცია</option>';
     const teamId = team.value;
 
-    fetch('https://pcfy.redberryinternship.ge/api/positions') 
-    .then(response => response.json()).then(data => {
-        let positions = data.data;
-        for(let i = 0; i < positions.length; i++) {
-            let option = document.createElement('option');
-            option.value = positions[i].id;
-            option.innerText = positions[i].name;
-            if(positions[i].team_id == teamId) {
-                position.appendChild(option);
+    for(let i = 0; i < positionOptions.length; i++) {
+        let option = document.createElement('option');
+        option.value = positionOptions[i].id;
+        option.innerText = positionOptions[i].name;
+        if(positionOptions[i].team_id == teamId) {
+            position.appendChild(option);
+            if(positionOptions[i].id === +localData.position_id && localData.position_id) {
+                option.selected = true;
             }
         }
-
     }
-)
+
 }
 
 const testForm = () => {

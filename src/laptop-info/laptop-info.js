@@ -11,41 +11,43 @@ let ram = document.querySelector('#laptop_ram');
 let laptopPrice = document.querySelector('#laptop_price');
 let submitted = false;
 
-if(localData.laptop_name) {
+let teamOptions = [];
+
+if(localData?.laptop_name) {
     laptopName.value = localData.laptop_name;
 }
 
-if(localData.laptop_cpu) {
+if(localData?.laptop_cpu) {
     cpu.value = localData.laptop_cpu;
 }
 
-if(localData.laptop_cpu_cores) {
+if(localData?.laptop_cpu_cores) {
     cpuCore.value = localData.laptop_cpu_cores;
 }
 
-if(localData.laptop_cpu_threads) {
+if(localData?.laptop_cpu_threads) {
     cpuThread.value = localData.laptop_cpu_threads;
 }
 
-if(localData.laptop_ram) {
+if(localData?.laptop_ram) {
     ram.value = localData.laptop_ram;
 }
 
-if(localData.laptop_price) {
+if(localData?.laptop_price) {
     laptopPrice.value = localData.laptop_price;
 }
 
-if(localData.laptop_hard_drive_type){
+if(localData?.laptop_hard_drive_type){
     const hardDriveType = document.querySelector(`input[value="${localData.laptop_hard_drive_type}"]`);
     hardDriveType.checked = true;
 }
 
-// if(localData.laptop_state){
-//     const laptopState = document.querySelector(`input[value="${localData.laptop_state}"]`);
-//     laptopState.checked = true;
-// }
+if(localData?.laptop_state){
+    const laptopState = document.querySelector(`input[value="${localData.laptop_state}"]`);
+    laptopState.checked = true;
+}
 
-if(localData.laptop_purchase_date){
+if(localData?.laptop_purchase_date){
     date.value = localData.laptop_purchase_date;
 }
 
@@ -58,7 +60,7 @@ fetch('https://pcfy.redberryinternship.ge/api/brands')
         option.innerText = brands[i].name;
         laptopBrand.appendChild(option);
     }
-    if(localData.laptop_brand_id) {
+    if(localData?.laptop_brand_id) {
         const laptopBrandId = Number(localData.laptop_brand_id);
         laptopBrand.querySelector(`option[value="${laptopBrandId}"]`).selected = true;
     }
@@ -256,9 +258,9 @@ document.querySelectorAll('input[type="radio"]').forEach(radio => radio.addEvent
 }))
 
 
-const laptopPhotoSRC = '';
 laptopPhoto.addEventListener('change', (event) => {
     laptopPhoto.parentElement.classList.remove('error');
+    localData.laptop_image = event.target.files[0];
     laptopPhoto.parentElement.style.backgroundImage = `url(${URL.createObjectURL(event.target.files[0])})`;
     laptopPhoto.parentElement.classList.add('succeed');
     laptopPhoto.parentElement.querySelectorAll('span').forEach(span => span.style.display = 'none');

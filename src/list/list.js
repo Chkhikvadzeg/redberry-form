@@ -6,12 +6,13 @@ fetch('https://pcfy.redberryinternship.ge/api/laptops?token=0fd6fd8a505704d77b82
         const laptopImageSrc = 'https://pcfy.redberryinternship.ge/' + laptop.laptop.image;
         const authorFullName = laptop.user.name + ' ' + laptop.user.surname;
         const laptopBrand = laptop.laptop.name;
-        const listItem = createListItem(laptopImageSrc, authorFullName, laptopBrand);
+        const id = laptop.laptop.id;
+        const listItem = createListItem(laptopImageSrc, authorFullName, laptopBrand, id);
         list.append(listItem);
     })
 })
 
-const createHtmlElement = (element, className, text, src, href) => {
+const createHtmlElement = (element, className, text, src, href, id, idFunction) => {
     const el = document.createElement(element);
     if(className){
         el.classList.add(className);
@@ -25,17 +26,26 @@ const createHtmlElement = (element, className, text, src, href) => {
     if(href) {
         el.href = href;
     }
+    if(id) {
+        el.id = id;
+    }
+    if(idFunction) {
+        el.onclick = function() {
+            const id = el.parentElement.closest('li').id;
+            localStorage.setItem('laptopId', id);
+        };
+    }
     return el;
 }
 
-const createListItem = (imageSrc, authorFullName, laptopBrand) => {
-    const listItem = createHtmlElement('li', 'list__item');
+const createListItem = (imageSrc, authorFullName, laptopBrand, elementId) => {
+    const listItem = createHtmlElement('li', 'list__item', null, null, null, elementId);
     const laptopImageDiv = createHtmlElement('div', 'list__item-img');
     const laptopImage = createHtmlElement('img', null, null, imageSrc);
     const laptopInfo = createHtmlElement('div', 'list__item-info');
     const author = createHtmlElement('span', 'list__item-author', authorFullName);
     const laptopModel = createHtmlElement('h4', 'list__item-name', laptopBrand);
-    const link = createHtmlElement('a', 'list__item-link', 'მეტის ნახვა', null, '#');
+    const link = createHtmlElement('a', 'list__item-link', 'მეტის ნახვა', null, '../laptop-full-info/laptop-full-info.html', null, true);
 
     listItem.append(laptopImageDiv, laptopInfo);
     laptopImageDiv.append(laptopImage);

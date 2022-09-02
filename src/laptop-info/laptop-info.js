@@ -10,6 +10,7 @@ let date = document.querySelector('#laptop_purchase_date');
 let ram = document.querySelector('#laptop_ram');
 let laptopPrice = document.querySelector('#laptop_price');
 let submitted = false;
+let droppedImage = false;
 const formData = new FormData();
 
 let teamOptions = [];
@@ -212,7 +213,7 @@ const testRadio = (parentElementName, object) => {
 }
 
 const testPhoto = (input, object) => {
-    if(laptopPhoto.files[0] || laptopPhoto.files.length > 0) {
+    if(laptopPhoto.files[0] || droppedImage === true) {
         input.parentElement.classList.remove('error');
         input.parentElement.classList.add('succeed');
     }else {
@@ -285,6 +286,7 @@ laptopPhoto.parentElement.addEventListener('dragover', (event) => {
  laptopPhoto.parentElement.addEventListener('drop', (event) => {
     event.stopPropagation();
     event.preventDefault();
+    droppedImage = true;
     laptopPhoto.parentElement.classList.remove('error');
     laptopPhoto.parentElement.classList.remove('dragover');
     laptopPhoto.parentElement.style.backgroundImage = `url(${URL.createObjectURL(event.dataTransfer.files[0])})`;

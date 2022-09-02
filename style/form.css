@@ -294,7 +294,10 @@ option {
     padding: 12px 16px;
 }
 
-
+.desktop-logo {
+    display: none;
+    margin: 68px auto 0;
+}
 
 @media screen and (min-width: 1440px) {
     body {
@@ -434,6 +437,10 @@ option {
 
     .gap-24 {
         gap: 24px;
+    }
+
+    .desktop-logo {
+        display: block;
     }
 
 }

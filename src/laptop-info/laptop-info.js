@@ -290,7 +290,7 @@ laptopPhoto.parentElement.addEventListener('dragover', (event) => {
     laptopPhoto.parentElement.classList.remove('error');
     laptopPhoto.parentElement.classList.remove('dragover');
     laptopPhoto.parentElement.style.backgroundImage = `url(${URL.createObjectURL(event.dataTransfer.files[0])})`;
-    formData.set('laptop_image', laptopPhoto.files[0]);
+    formData.set('laptop_image', event.dataTransfer.files[0]);
     laptopPhoto.parentElement.classList.add('succeed');
     laptopPhoto.parentElement.querySelectorAll('span').forEach(span => span.style.display = 'none');
  });

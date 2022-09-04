@@ -17,7 +17,7 @@ const laptopBrand = document.querySelector('#laptopBrand');
 const ram = document.querySelector('#ram');
 const memoryType = document.querySelector('#memoryType');
 
-fetch(`https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=0fd6fd8a505704d77b82ddb480f22750`).then(response => response.json()).then(data => {
+fetch(`https://pcfy.redberryinternship.ge/api/laptop/${laptopId}?token=00ac6f754d6422d515acfa6af4606e00`).then(response => response.json()).then(data => {
     const laptop = data.data.laptop;
     const user = data.data.user;
 

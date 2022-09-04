@@ -1,6 +1,6 @@
 const list = document.querySelector('.list');
 
-fetch('https://pcfy.redberryinternship.ge/api/laptops?token=0fd6fd8a505704d77b82ddb480f22750').then(response => response.json()).then(data => {
+fetch('https://pcfy.redberryinternship.ge/api/laptops?token=00ac6f754d6422d515acfa6af4606e00').then(response => response.json()).then(data => {
     const laptops = data.data;
     laptops.forEach(laptop => {
         const laptopImageSrc = 'https://pcfy.redberryinternship.ge/' + laptop.laptop.image;

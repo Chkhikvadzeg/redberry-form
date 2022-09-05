@@ -119,7 +119,7 @@ if(event.target.value === '') {
 
 const submitButton = document.querySelectorAll('.laptop-info .button--small')[1];
 
-submitButton.addEventListener('click', (event) => {
+submitButton.addEventListener('click', async (event) => {
     event.preventDefault();
     testForm();
 
@@ -145,15 +145,14 @@ submitButton.addEventListener('click', (event) => {
             formData.append('laptop_purchase_date', localData.laptop_purchase_date);
         }
         formData.append('token', '00ac6f754d6422d515acfa6af4606e00');
-        fetch('https://pcfy.redberryinternship.ge/api/laptop/create', {
-            method: 'POST',
-            body: formData
-        })
-        localStorage.removeItem('data');
-        window.location.href = '../popup/success.html';
-    }
-
-})
+        try {
+            const response = await axios.post('https://pcfy.redberryinternship.ge/api/laptop/create', formData)
+            localStorage.removeItem('data');
+            window.location.href = '../popup/success.html';
+        } catch (error) {
+            console.log(error);
+        }
+}});
 
 const testLatin = (input, object) => {
     let latinRegex = /^[a-zA-Z0-9_.-\s]+$/;

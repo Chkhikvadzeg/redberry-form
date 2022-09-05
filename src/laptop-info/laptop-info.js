@@ -9,6 +9,7 @@ let cpuThread = document.querySelector('#laptop_cpu_threads');
 let date = document.querySelector('#laptop_purchase_date');
 let ram = document.querySelector('#laptop_ram');
 let laptopPrice = document.querySelector('#laptop_price');
+const blackBg = document.querySelector('.bg-black');
 let submitted = false;
 let droppedImage = false;
 const formData = new FormData();
@@ -146,7 +147,11 @@ submitButton.addEventListener('click', async (event) => {
         }
         formData.append('token', '00ac6f754d6422d515acfa6af4606e00');
         try {
+            blackBg.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
             const response = await axios.post('https://pcfy.redberryinternship.ge/api/laptop/create', formData)
+            blackBg.style.display = 'none';
+            document.body.style.overflow = 'auto';
             localStorage.removeItem('data');
             window.location.href = '../popup/success.html';
         } catch (error) {
